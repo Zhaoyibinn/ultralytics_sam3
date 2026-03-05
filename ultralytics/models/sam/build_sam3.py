@@ -299,8 +299,9 @@ def build_interactive_sam3(checkpoint_path: str, compile=None, with_backbone=Tru
         num_layers=4,
     )
 
+    compile_mode = "default" if compile else None
     backbone = (
-        SAM3VLBackbone(scalp=1, visual=_create_vision_backbone(compile_mode=compile), text=None)
+        SAM3VLBackbone(scalp=1, visual=_create_vision_backbone(compile_mode=compile_mode), text=None)
         if with_backbone
         else None
     )

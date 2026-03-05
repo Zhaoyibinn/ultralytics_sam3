@@ -19,6 +19,7 @@ from .modules.memory_attention import MemoryAttention, MemoryAttentionLayer
 from .modules.sam import SAM2Model, SAMModel
 from .modules.tiny_encoder import TinyViT
 from .modules.transformer import TwoWayTransformer
+from .build_sam3 import build_interactive_sam3, build_sam3_image_model
 
 
 def _load_checkpoint(model, checkpoint):
@@ -329,6 +330,7 @@ sam_model_map = {
     "sam2.1_s.pt": build_sam2_s,
     "sam2.1_b.pt": build_sam2_b,
     "sam2.1_l.pt": build_sam2_l,
+    "sam3.pt": build_sam3_image_model,
 }
 
 

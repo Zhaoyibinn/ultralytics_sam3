@@ -8,6 +8,7 @@ from .predict import (
     SAM2VideoPredictor,
     SAM3Predictor,
     SAM3SemanticPredictor,
+    SAM3DynamicInteractivePredictor,
     SAM3VideoPredictor,
     SAM3VideoSemanticPredictor,
 )
@@ -20,6 +21,7 @@ __all__ = (
     "SAM2VideoPredictor",
     "SAM3Predictor",
     "SAM3SemanticPredictor",
+    "SAM3DynamicInteractivePredictor",
     "SAM3VideoPredictor",
     "SAM3VideoSemanticPredictor",
 )  # tuple or list of exportable items

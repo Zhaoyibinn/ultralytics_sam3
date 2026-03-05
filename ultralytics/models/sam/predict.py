@@ -2013,7 +2013,7 @@ class SAM2DynamicInteractivePredictor(SAM2Predictor):
             "maskmem_features": None,
             "maskmem_pos_enc": None,
             "pred_masks": torch.full(
-                size=(self._max_obj_num, 1, self.imgsz[0] // 4, self.imgsz[1] // 4),
+                size=(self._max_obj_num, 1, self._bb_feat_sizes[0][0], self._bb_feat_sizes[0][1]),
                 fill_value=-1024.0,
                 dtype=self.torch_dtype,
                 device=self.device,
@@ -2207,6 +2207,10 @@ class SAM3Predictor(SAM2Predictor):
         from .build_sam3 import build_interactive_sam3  # slow import
 
         return build_interactive_sam3(self.args.model, compile=self.args.compile)
+
+
+class SAM3DynamicInteractivePredictor(SAM2DynamicInteractivePredictor, SAM3Predictor):
+    """SAM3DynamicInteractivePredictor extends SAM2DynamicInteractivePredictor for SAM3."""
 
 
 class SAM3SemanticPredictor(SAM3Predictor):
