@@ -13,13 +13,13 @@ import torch
 from ultralytics.utils.downloads import attempt_download_asset
 from ultralytics.utils.patches import torch_load
 
+from .build_sam3 import build_sam3_image_model
 from .modules.decoders import MaskDecoder
 from .modules.encoders import FpnNeck, Hiera, ImageEncoder, ImageEncoderViT, MemoryEncoder, PromptEncoder
 from .modules.memory_attention import MemoryAttention, MemoryAttentionLayer
 from .modules.sam import SAM2Model, SAMModel
 from .modules.tiny_encoder import TinyViT
 from .modules.transformer import TwoWayTransformer
-from .build_sam3 import build_interactive_sam3, build_sam3_image_model
 
 
 def _load_checkpoint(model, checkpoint):
